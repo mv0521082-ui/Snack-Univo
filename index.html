@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicación universitaria para simular una máquina expendedora de refrigerios.">
+    <title>Máquina Expendedora de Refrigerios</title>
+
+    <!-- Enlace a tu hoja de estilos CSS (ajusta la ruta si está en otra carpeta) -->
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado del proyecto -->
+    <header id="encabezado-principal">
+        <h1>Máquina Expendedora de Refrigerios</h1>
+        <p>Administra productos, realiza compras y controla las existencias.</p>
+    </header>
+
+    <main id="contenido-principal">
+
+        <!-- Panel de resumen -->
+        <section id="panel-resumen" aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Resumen general</h2>
+
+            <div id="tarjeta-ingresos">
+                <h3>Ingresos Totales ($)</h3>
+                <p id="ingresos-totales">$0.00</p>
+            </div>
+
+            <div id="tarjeta-unidades-vendidas">
+                <h3>Unidades Vendidas</h3>
+                <p id="unidades-vendidas">0</p>
+            </div>
+        </section>
+
+        <!-- Controles de búsqueda y filtro del catálogo -->
+        <section id="controles-catalogo" aria-labelledby="titulo-controles">
+            <h2 id="titulo-controles">Buscar y filtrar productos</h2>
+
+            <div id="campo-busqueda">
+                <label for="buscar-producto">Buscar producto por nombre:</label>
+                <input
+                    type="search"
+                    id="buscar-producto"
+                    name="buscar-producto"
+                    placeholder="Escribe el nombre del producto..."
+                >
+            </div>
+
+            <div id="campo-filtro-estado">
+                <label for="filtro-estado">Filtrar por disponibilidad:</label>
+                <select id="filtro-estado" name="filtro-estado">
+                    <option value="todos">Todos</option>
+                    <option value="disponibles">Disponibles</option>
+                    <option value="agotados">Agotados</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Catálogo de productos -->
+        <section id="seccion-catalogo" aria-labelledby="titulo-catalogo">
+            <h2 id="titulo-catalogo">Catálogo de productos</h2>
+
+            <div id="catalogo-productos">
+                <!-- TypeScript insertará aquí los productos cargados desde JSON. -->
+            </div>
+
+            <p id="mensaje-catalogo" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Panel de operaciones: comprar y reponer -->
+        <section id="panel-operaciones" aria-labelledby="titulo-operaciones">
+            <h2 id="titulo-operaciones">Panel de operaciones</h2>
+
+            <!-- Información del producto seleccionado -->
+            <aside id="producto-seleccionado" aria-labelledby="titulo-producto-seleccionado">
+                <h3 id="titulo-producto-seleccionado">Producto seleccionado</h3>
+
+                <p>
+                    <strong>Nombre:</strong>
+                    <span id="producto-seleccionado-nombre">Ningún producto seleccionado</span>
+                </p>
+
+                <p>
+                    <strong>Precio:</strong>
+                    <span id="producto-seleccionado-precio">$0.00</span>
+                </p>
+
+                <p>
+                    <strong>Stock disponible:</strong>
+                    <span id="producto-seleccionado-stock">0</span>
+                </p>
+            </aside>
+
+            <!-- Formulario para realizar las operaciones -->
+            <form id="form-operacion" name="form-operacion">
+                <div id="campo-cantidad">
+                    <label for="cantidad-operacion">Cantidad:</label>
+                    <input
+                        type="number"
+                        id="cantidad-operacion"
+                        name="cantidad-operacion"
+                        min="1"
+                        step="1"
+                        value="1"
+                    >
+                </div>
+
+                <div id="botones-operacion">
+                    <button
+                        type="button"
+                        id="boton-comprar"
+                        name="boton-comprar"
+                        value="comprar"
+                    >
+                        Comprar
+                    </button>
+
+                    <button
+                        type="button"
+                        id="boton-reponer"
+                        name="boton-reponer"
+                        value="reponer"
+                    >
+                        Reponer existencias
+                    </button>
+                </div>
+            </form>
+
+            <p id="mensaje-operacion" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Historial de movimientos -->
+        <section id="seccion-historial" aria-labelledby="titulo-historial">
+            <h2 id="titulo-historial">Historial de movimientos</h2>
+
+            <div id="campo-filtro-movimientos">
+                <label for="filtro-tipo-movimiento">Filtrar movimientos por tipo:</label>
+                <select
+                    id="filtro-tipo-movimiento"
+                    name="filtro-tipo-movimiento"
+                >
+                    <option value="todos">Todos</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="reposiciones">Reposiciones</option>
+                </select>
+            </div>
+
+            <table id="tabla-movimientos">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha/Hora</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabla-historial">
+                    <!-- TypeScript insertará aquí los registros de movimientos. -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="pie-pagina">
+        <p>Proyecto académico: Simulación de una Máquina Expendedora de Refrigerios.</p>
+    </footer>
+
+    <!-- Archivo JavaScript compilado desde TypeScript -->
+    <script src="inventario.js"></script>
+</body>
+</html>

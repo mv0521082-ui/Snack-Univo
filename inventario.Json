@@ -1,0 +1,44 @@
+[
+  {
+    "id": "SNK-01",
+    "nombre": "Papas Fritas Clásicas",
+    "categoria": "Snacks",
+    "precio": 0.75,
+    "stock": 12
+  },
+  {
+    "id": "SNK-02",
+    "nombre": "Galletas de Chocolate",
+    "categoria": "Dulces",
+    "precio": 0.60,
+    "stock": 10
+  },
+  {
+    "id": "SNK-03",
+    "nombre": "Agua Purificada 600ml",
+    "categoria": "Bebidas",
+    "precio": 0.50,
+    "stock": 15
+  },
+  {
+    "id": "SNK-04",
+    "nombre": "Jugo de Manzana",
+    "categoria": "Bebidas",
+    "precio": 0.85,
+    "stock": 8
+  },
+  {
+    "id": "SNK-05",
+    "nombre": "Barra de Cereal",
+    "categoria": "Snacks",
+    "precio": 0.90,
+    "stock": 6
+  },
+  {
+    "id": "SNK-06",
+    "nombre": "Chocolate con Maní",
+    "categoria": "Dulces",
+    "precio": 1.00,
+    "stock": 0
+  }
+]
